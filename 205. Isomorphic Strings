@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length())
+            return false;
+        int[] map1 = new int[256];
+        int[] map2 = new int[256];
+        for(int idx = 0; idx < s.length(); idx++){
+            if(map1[s.charAt(idx)] != map2[t.charAt(idx)])
+                return false;
+            map1[s.charAt(idx)] = idx + 1;
+            map2[t.charAt(idx)] = idx + 1;
+        }
+        return true;
+    }
+}
+
+..............................................................................................................................................................
+
+Explanation:
+  best case will be if both strings are of different length.
+  else we will create maps and the map the value to it.
+  And then we will comare both the maps and of the are same return TRUE else FALSE.....................

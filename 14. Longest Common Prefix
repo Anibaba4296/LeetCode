@@ -1,0 +1,26 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0)
+            return "";
+        
+        Arrays.sort(strs);
+        String first = strs[0];
+        String last = strs[strs.length - 1];
+        int c = 0;
+        while(c < first.length())
+        {
+            if (first.charAt(c) == last.charAt(c))
+                c++;
+            else
+                break;
+        }
+        return first.substring(0, c);
+    }
+}
+
+.................................................................................................................................................
+
+Explaination:
+  we will sort the string at first step using Arrays.sort() function.
+  then we will comare first and the last string for comman prefix.
+  we will keep the count and then we will return the substring from 0 to count of first string.
